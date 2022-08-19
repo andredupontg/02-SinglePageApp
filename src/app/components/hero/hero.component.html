@@ -1,1 +1,21 @@
-<p>hero works!</p>
+<h1>{{hero.name}} <small>{{hero.release}}</small></h1>
+<hr>
+
+<div class="row">
+  <div class="col-md-4">
+    <img [src]="hero.img" class="img-fluid" [alt]="hero.name"/>
+    <br>
+    <button (click)="goBack()" class="btn btn-outline-danger btn-block">Back</button>
+  </div>
+
+  <div class="col-md-8">
+    <h3>{{hero.name}}</h3>
+    <hr>
+    <p>{{hero.bio}}</p>
+    <div>
+      <img *ngIf="hero.home == 'DC'" src="assets/img/dc.png" alt="house" height="200px" width="200px">
+      <img *ngIf="hero.home == 'Marvel'" src="assets/img/marvel.png" alt="house" height="200px" width="200px">
+    </div>
+  </div>
+</div>
+
