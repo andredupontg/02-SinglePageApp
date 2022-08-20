@@ -4,15 +4,7 @@
 
 <div class="row row-cols-1 row-cols-md-2 g-4">
   <div class="col">
-    <div class="card" *ngFor="let hero of heroes; let i = index">
-      <img [src]="hero.img" class="card-img-top" [alt]="hero.name">
-      <div class="card-body">
-        <h5 class="card-title">{{hero.name}} | {{hero.home}}</h5>
-        <p class="card-text">{{hero.bio}}</p>
-        <p class="card-text"><small class="text-muted">{{hero.release}}</small></p>
-        <button type="button" class="btn btn-outline-primary btn-block" (click)="showHero(i)">See more</button>
-      </div>
-    </div>
+    <app-hero-card [hero]="hero" [index]="i" *ngFor="let hero of heroes; let i = index;"></app-hero-card>
   </div>
 </div>
 
