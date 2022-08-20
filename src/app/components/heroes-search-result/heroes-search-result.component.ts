@@ -21,4 +21,8 @@ export class HeroesSearchResultComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {this.searchStr = params['heroName'];});
     this.heroesArray = this._heroesService.searchHeroes(this.searchStr);
   }
+
+  showHero(index: number){
+    this.router.navigate(['/hero', index]);
+  }
 }
