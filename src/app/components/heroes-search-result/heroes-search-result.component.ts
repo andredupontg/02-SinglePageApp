@@ -15,11 +15,11 @@ export class HeroesSearchResultComponent implements OnInit {
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
               private _heroesService: HeroesService) {
-    this.activatedRoute.params.subscribe(params => {this.searchStr = params['heroName'];});
-    this.heroesArray = this._heroesService.searchHeroes(this.searchStr);
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {this.searchStr = params['heroName'];});
+    this.heroesArray = this._heroesService.searchHeroes(this.searchStr);
   }
 
   showHero(i: Number){
